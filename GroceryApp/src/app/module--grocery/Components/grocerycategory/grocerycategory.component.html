@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<div style="margin-top: 100px;"></div>
+<div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let cat of category">
+        <div class="card" style="width: 18rem; margin-top: 30px;" >
+          <img src="{{cat.image}}" class="card-img-top" alt="{{cat.categoryName}}">
+          <div class="card-body">
+            <h3 class="card-title"><strong>{{ cat.categoryName }}</strong></h3>
+            <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
+            <!-- <a  class="btn btn-primary" onclick="getCatgeoryById(cat.categoryId)">See Groceries</a> -->
+            <button class="btn btn-info" (click)="getCategoriesById(cat.categoryId)" style="margin-top: -10%;">See Groceries</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  

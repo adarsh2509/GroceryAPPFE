@@ -1,0 +1,42 @@
+.card {
+    height: 400px; /* Increased height to accommodate the price and button */
+    width: 300px;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: fill;
+  }
+  
+  .card-footer {
+    display: flex;
+    align-items: center; /* Align the price and button horizontally in the footer */
+    justify-content: space-between; /* Add space between the price and button */
+    padding: 10px;
+  }
+
+  h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+  }
+
+  th{
+    text-align: center;
+  }
+
+  td{
+    text-align: center;
+  }
+  
+
+  table{
+    border: 2cap;
+  }

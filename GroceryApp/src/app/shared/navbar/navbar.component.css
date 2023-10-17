@@ -1,0 +1,90 @@
+
+.navbar-brand{
+    
+        font-family: "Segoe UI", sans-serif;
+        font-size: 2rem;
+        font-weight: bold;
+        color: #e7c108;
+        text-shadow: 2px 2px #000;
+      
+    font-size: xx-large;
+}
+.nav{
+    background-color: aquamarine;
+}
+
+nav.navbar {
+    background-color: green;
+  }
+  
+  .offcanvas {
+    background-color: rgb(133, 207, 133);
+  }
+  
+.dropdown-menu{
+    background-color: rgb(192, 235, 149);
+}
+
+.nav-link{
+  font-size: large;
+  /* color: rgb(203, 11, 11); */
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+}
+
+.count-circle {
+  position: absolute;
+  top: -10px; 
+  right: -15px; 
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 200, 0);
+  border-radius: 50%;
+  padding: 2px;
+  color: rgb(0, 0, 0);
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 16px;
+  z-index: 1;
+}
+
+.count-circle1 {
+  position: absolute;
+  top: -4px; 
+  right: -15px; 
+  width: 20px;
+  height: 20px;
+  background-color: black;
+  border-radius: 50%;
+  padding: 2px;
+  color: white;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 16px;
+  z-index: 1;
+}
+
+.anchor{
+  color: rgb(231, 192, 18);
+  font-size: larger;
+  text-align: center;
+}
+
+
+/*  */
+
+.images{
+  max-width: 40px;
+  max-height: 40px;
+  
+}
+
+.logo{
+  max-width: 20px;
+  max-height: 20px;
+}

@@ -1,0 +1,140 @@
+<app-navbar></app-navbar>
+
+<div style="margin-top: 100px;"></div>
+
+<div>
+
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-4">
+        <div class="card text-start mb-3" style="width: 20rem;">
+          <div class="card-body">
+            <h2>Address</h2>
+            <!-- Content for the second card goes here -->
+            <h3 class="card-title">Name:{{ buyer?.name }}</h3>
+            <h4 class="card-subtitle ">Ph No: {{ buyer?.phNo }}</h4>
+            <h4 class="card-subtitle">Email: {{ buyer?.emailId }}</h4>
+            <h4 class="card-text">Address: {{ buyer?.address }}</h4>
+            <h4 class="card-text">Pincode: {{buyer?.pincode}}</h4>
+           <button class="btn btn-warning" routerLink="/buyer">Change Adress</button>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-4">
+        <div class="card text-center mb-3" style="width: 20rem;">
+          <div class="card-body">
+            <h2>Cart Items</h2>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <!-- <th class="text-centered">Image</th> -->
+                  <th class="text-centered">Grocery Name</th>
+                  <th class="text-centered">Grocery Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let carts of cart">
+                  <!-- <td class="text-centered"><img class="images" src="{{carts.image}}"></td> -->
+                  <td class="text-centered">{{carts.groceryName}}</td>
+                  <td class="text-centered">{{carts.groceryPrice}}</td>
+                </tr>
+                <tr>
+                  <th>Total</th>
+                  <td colspan="2"><strong>&#8377;{{calculate()}}</strong></td>
+                </tr>
+                <tr>
+                  <th>Discount 10%</th>
+                  <td colspan="2"><strong>&#8377;{{calculateDiscount()}}</strong></td>
+                </tr>
+                <tr>
+                  <th>Delivery Charges</th>
+                  <td colspan="2"><strong>&#8377;{{deliveryCharges()}}</strong></td>
+                </tr>
+                <tr>
+                  <th>
+                    <p class="mb-0">Total Amount</p>
+                    <small>(including taxes)</small>
+                  </th>
+                  <td colspan="2">
+                    <h4 class="mb-0"><strong>&#8377;{{totalAmount()}}</strong></h4>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <button class="btn btn-primary btn-sm" (click)="proceedWithPayment()">
+              <i class="bi bi-cash"></i> Proceed
+            </button>
+&nbsp; &nbsp; &nbsp;
+            <button class="btn btn-info btn-sm" style="color: white;" routerLink="/cart">
+              <i class="bi bi-arrow-left-circle-fill"></i> Back to Cart
+            </button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="loading-popup" *ngIf="loading">
+        <div class="loading-content">
+          <img  src="https://cdn.dribbble.com/users/25514/screenshots/1816425/loading_animation-iphone-game-design-ramotion.gif">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="container" [hidden]="!showPaymentOptions">
+          <div class="card payment-options" style="width: 20rem;">
+            <div class="card-body text-center">
+              <h2 class="card-title">Payment Options</h2>
+              <div class="input-group">
+                <select class="form-select form-select-sm" [(ngModel)]="selectedPaymentOption">
+                  <option selected>Payment options</option>
+                  <option value="credit">Credit card<i class="bi bi-cash"></i></option>
+                  <option value="debit"><i class="bi bi-cash"></i>Debit card</option>
+                  <option value="upi"><i class="bi bi-credit-card-2-front"></i> UPI</option>
+                  <option value="cod"><i class="bi bi-cash-stack"></i> COD</option>
+                </select>
+                <button class="btn btn-success btn-sm" (click)="createOrder()">
+                  <i class="bi bi-currency-dollar"></i> Pay
+                </button>
+              </div>
+      
+              <div *ngIf="selectedPaymentOption === 'credit' || selectedPaymentOption === 'debit'">
+                <form>
+                  <h2 style="text-align: center;">Amount: {{totalAmount()}}</h2>
+                  <div class="form-group">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" class="form-control" id="cardNumber" name = "cardNumber" [(ngModel)]="cardNumber" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="form-control" id="cvv" name="cvv" [(ngModel)]="cvv" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="cardHolderName">Cardholder Name</label>
+                    <input type="text" class="form-control" id="cardHolderName"  name="carDHolderName" [(ngModel)]="cardHolderName" required>
+                  </div>
+                  <!-- <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="text" class="form-control" id="amount" name="amount" [(ngModel)]="amount">
+                  </div> -->
+                </form>
+              </div>
+      
+              <div *ngIf="selectedPaymentOption === 'upi'">
+                <!-- Show the QR code for UPI payment -->
+                <img src="path_to_qr_code_image" alt="QR Code">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-md-4">
+       
+      </div>
+    </div>
+  </div>
+  
+
+
+</div>

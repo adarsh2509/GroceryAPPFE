@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+
+<div style="margin-top: 70px;"></div>
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Order no</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Amount</th>
+        <th>Payment Method</th>
+        <th>Current Status</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let orders of order">
+        <td>{{ orders.orderId }}</td>
+        <td>{{ orders.name }}</td>
+        <td>{{ orders.address }}</td>
+        <td>{{ orders.amount }}</td>
+        <td>{{ orders.paymentMethod }}</td>
+        <td>{{ orders.status }}</td>
+        <td>
+            <select [(ngModel)]="orders.status" class="custom-select">
+                <option value="Accepted">Accepted</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Delivered">Delivered</option>
+                <option value="Rejected">Rejected</option>
+              </select>
+              
+        </td>
+        <td>
+          <button class="btn btn-warning btn-sm rounded-circle hover-effect" (click)="updateOrder(orders.orderId, orders)">
+            <i class="bi bi-pencil-fill"></i>
+          </button>
+&nbsp;
+          <button class="btn btn-danger btn-sm rounded-circle hover-effect" (click)="delete(orders.orderId)">
+            <i class="bi bi-trash-fill"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

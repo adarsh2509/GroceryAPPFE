@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<div style="margin-top: 80px;"></div>
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Sl No</th>
+        <th class="text-center">Image</th>
+        <th>Name</th>
+        <th class="text-center">Price</th>
+        <th class="text-center">Quantity</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cartItem of cart; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td class="text-center">
+          <img src="{{cartItem.image}}" alt="{{cartItem.groceryName}}" style="object-fit: contain; height: 100px; width: 100%;">
+        </td>
+        <td>{{ cartItem.groceryName }}</td>
+        <td class="text-center">&#8377;{{cartItem.groceryPrice}}</td>
+        <td class="text-center">{{cartItem.quantity}} X {{cartItem.num}}</td>
+        <td class="text-center">
+          <button type="button" class="btn btn-primary" (click)="deleteCartId(cartItem.cartId)"><i class="bi bi-trash-fill"></i></button>
+          <!-- <button type="button" class="btn btn-success btn-sm">Buy</button> -->
+        </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2"></td>
+        <td class="text-center"><strong>Total:</strong></td>
+        <td colspan="1" class="text-center"><strong>&#8377;{{ calculateTotalPrice() }}</strong></td>
+        <td colspan="2" class="text-center">
+            <button type="button" class="btn btn-success" (click)="proceed()">Proceed</button>
+          </td>
+      </tr>
+      <!-- <button type="button" class="btn btn-success"><p>Total</p>
+        <p><strong>&#8377;{{ calculateTotalPrice() }}</strong></p> &nbsp; &nbsp; &nbsp; &nbsp; Proceed  
+    </button> -->
+    </tfoot>
+  </table>
+</div>

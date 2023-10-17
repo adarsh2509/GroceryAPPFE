@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<div style="margin-top: 80px;"></div>
+<div class="container">
+    <table class="table-bordered">
+        <th>Images</th>
+        <th>GrorceyName</th>
+        <th>GroceryType</th>
+        <th>GroceryPrice</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+        <tr *ngFor="let f of fav">
+            <td><img class="images" src="{{f.image}}"></td>
+            <td>{{f.groceryName}}</td>
+            <td>{{f.groceryType}}</td>
+            <td>{{f.groceryPrice}}</td>
+            <td>{{f.quantity}}</td>
+            <td><button class="btn btn-danger" (click)="deleteFavorite(f.favId)">Remove</button></td>
+        </tr>
+    </table>
+</div>

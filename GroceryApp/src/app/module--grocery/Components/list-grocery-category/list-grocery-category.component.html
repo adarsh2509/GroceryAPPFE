@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+
+<div style="margin-top: 100px;"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3" *ngFor="let gro of groceries">
+      <div class="card" style="margin-top: 20px;">
+        <img class="card-img-top" src="{{ gro.image }}" alt="{{ gro.groceryName }}">
+        <div class="card-body" style="height: 200px;">
+          <h2 class="card-title" style="margin-top: -10%;">{{ gro.groceryName }}</h2>
+          <h5 class="card-text" style="max-height: 70px; margin-top: -10%;">{{ gro.description }}</h5>
+          <p class="card-text">Price: ₹{{ gro.groceryPrice }} &nbsp; &nbsp; Quantity: {{ gro.quantity }}</p>
+          
+          <!-- <p class="card-text">Category: {{ gro.groceryCategory.categoryName }}</p> -->
+          <div class="center">
+          <button class="btn btn-info" style="justify-content: center; margin-top: 3%;" (click)="getGroceryId(gro.groceryId)">Cart   <i class="bi bi-cart-plus-fill"></i></button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

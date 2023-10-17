@@ -1,0 +1,56 @@
+.card {
+    height: 450px;
+    width: 300px;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    width: 100%;
+    object-fit: fill;
+  }
+  
+  .card-footer {
+    display: flex;
+    align-items: center; /* Align the price and button horizontally in the footer */
+    justify-content: space-between; /* Add space between the price and button */
+    padding: 10px;
+  }
+
+  h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+  }
+
+  .heading{
+    text-align: center;
+    font-weight: 900;
+    font-size: xx-large;
+    color: yellowgreen;
+    text-shadow: 10cap;
+    box-shadow: inset;
+    text-emphasis-color: black;
+  }
+
+  .heart-icon {
+    display: inline-block;
+    width: 20px;
+    height: 40px;
+    background-color: transparent;
+    background-image: url('https://th.bing.com/th/id/R.5365673f66386551fa6df965535bcfa1?rik=UzbBo%2bjcduyTuQ&riu=http%3a%2f%2fwww.clipartbest.com%2fcliparts%2fKTn%2fXnM%2fKTnXnMAgc.png&ehk=vhGmsnENrQL2IH%2f9jIOSj8tJvVOxXNRhYqiiQMzUQGw%3d&risl=&pid=ImgRaw&r=0');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .heart-icon.active {
+    background-image: url('https://static.vecteezy.com/system/resources/previews/000/285/139/original/heart-symbol-of-love-and-valentine-s-day-flat-red-icon-isolated-on-white-background-vector-illustration-vector.jpg'); 
+  }
+  

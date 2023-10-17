@@ -1,0 +1,11 @@
+.images{
+    max-width: 100px;
+    max-height: 150px;
+}
+
+table{
+    width: 100%;
+    
+    border-color: aqua;
+    box-sizing: border-box;
+}

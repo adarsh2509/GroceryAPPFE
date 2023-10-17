@@ -1,0 +1,75 @@
+<div class="color" style="background-color: aquamarine;">
+  <nav class="navbar bg-body-tertiary fixed-top bg-success">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <!-- <button class="offcanvas-button">
+        <span class="offcanvas-icon"></span>
+      </button> -->
+      <img class="images"  src="https://cdn-icons-png.flaticon.com/512/291/291893.png" routerLink="">
+      <a class="navbar-brand" href="#">BasketBliss</a>
+       &nbsp; &nbsp; &nbsp;
+      <span><a class="nav-link active" aria-current="page" routerLink="/grocery">Grocery 
+        <img class="logo" src="https://th.bing.com/th/id/R.479f7f203335c48f4ee6656c3b5eabc5?rik=PBSuHAI6A1n3Gg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_482886.png&ehk=ZBgCLStYm4H%2b2o2xdVkskDA%2bxXYX97y2JwyGnvMBAbk%3d&risl=&pid=ImgRaw&r=0">
+      </a></span> &nbsp; &nbsp; &nbsp;
+      <span> <a class="nav-link active" aria-current="page" routerLink="/cart">Cart  <i class="bi bi-cart-plus-fill"></i>
+        <span class="count-circle">{{count}}</span></a></span>
+      <div class="ms-auto">
+        <button type="button" class="btn btn-warning me-2">Login <i class="bi bi-person-fill"></i></button>
+      </div>
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h4 class="offcanvas-title" id="offcanvasNavbarLabel">
+            <img class="images" style="margin-bottom: 5%;" src="https://cdn-icons-png.flaticon.com/512/291/291893.png" routerLink="">
+            <a class="navbar-brand" href="#" >BasketBliss</a>
+          </h4>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <form class="d-flex mt-3" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+          <br>
+          <ul class="navbar-nav ms-auto flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"> <i class="bi bi-house-fill"></i> &nbsp;Home</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="logo" src="https://th.bing.com/th/id/R.479f7f203335c48f4ee6656c3b5eabc5?rik=PBSuHAI6A1n3Gg&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_482886.png&ehk=ZBgCLStYm4H%2b2o2xdVkskDA%2bxXYX97y2JwyGnvMBAbk%3d&risl=&pid=ImgRaw&r=0">&nbsp;Grocery
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" routerLink="/grocery">Grocery</a></li>
+                <li><a class="dropdown-item" routerLink="/category">Categories</a></li>
+                <li><a class="dropdown-item" href="#">Veg</a></li>
+                <li><a class="dropdown-item" href="#">Non Veg</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/favourite"><i class="bi bi-bag-heart"></i>&nbsp;Favourite </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/map"><i class="bi-geo-alt-fill"></i>&nbsp;Location </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/cart"><i class="bi bi-cart-plus-fill"></i><span class="count-circle1">{{count}}</span>
+                &nbsp;My Cart
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/status"><i class="bi bi-truck"></i>&nbsp;Track Order </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-0-circle-fill"></i>&nbsp;Become a Seller</a><i class="bi bi-sell"></i>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="bi bi-hand-thumbs-up-fill"></i>&nbsp;Help</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>

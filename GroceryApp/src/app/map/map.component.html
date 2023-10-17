@@ -1,0 +1,11 @@
+<app-navbar>
+
+</app-navbar>
+<div class="search-container" style="margin-top: 80px; margin-left: 5px;">
+    <input type="text" [(ngModel)]="searchQuery" placeholder="Search location" (keyup.enter)="searchLocation()">
+    <button class="btn btn-warning btn-sm"(click)="searchLocation()">Search</button>
+  </div>
+  
+  <div id="map" class="map" style="height: 550px"></div>
+  
+  

@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+
+<!-- First Card -->
+<div style="margin-top: 100px;"></div>
+<div class="container-fluid" style="padding-left: 33%;">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Track Order</h5>
+      <input type="text" [(ngModel)]="name" placeholder="Enter The Name">
+      &nbsp; &nbsp; <button class="btn btn-sm" (click)="getOrderByName(name)">Track Order</button>
+    </div>
+  </div>
+
+  <div style="margin-top: 20px;"></div>
+  <div class="card" *ngFor="let orders of order">
+    <div class="card-body">
+      <h5 class="card-title">Name: {{ orders.name }}</h5>
+      <p class="card-text">Amount: &#8377;{{ orders.amount }}</p>
+      <p class="card-text">Address: {{ orders.address }}</p>
+      <p class="card-text">Payment: {{ orders.paymentMethod }}</p>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" [style.width]="getProgressWidth(orders.status)" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          {{ getProgressPercentage(orders.status) }}%
+        </div>
+       
+      </div>
+      <div>
+        <p> {{ orders.status }} in {{ orders.time | date:'medium' }}</p>
+      </div>
+    </div>
+  </div>
+</div>
